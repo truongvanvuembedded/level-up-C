@@ -2,10 +2,32 @@
 
 char *ordinal(int v)
 {
-	/*
-	   - create this function
-	   - this code won't run with out it!
-	 */
+	// Catch exception
+	if ((v == 11) || (v == 12) || (v == 13))
+	{
+		return "th";
+	}
+	
+	int temp;			// Save the remainder of v
+	temp = v%10;
+	switch (temp)
+	{
+	case 1:
+		return "st";
+		break;
+
+	case 2:
+		return "nd";
+		break;
+
+	case 3:
+		return "rd";
+		break;
+
+	default:
+		return "th";
+		break;
+	}
 }
 
 int main()
